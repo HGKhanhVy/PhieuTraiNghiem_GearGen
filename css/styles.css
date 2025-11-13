@@ -97,7 +97,7 @@ label {
     display: block;
     margin-bottom: 4px;
     font-weight: normal;
-    font-size: 13pt;
+    font-size: 12pt;
 }
 
 input[type="text"],
@@ -107,7 +107,7 @@ textarea {
     padding: 4px 0;
     border: none;
     background: transparent;
-    font-size: 13pt;
+    font-size: 12pt;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -130,7 +130,7 @@ textarea {
 .rating-title {
     flex: 0 0 30%; 
     color: #1c1e85;
-    font-size: 13pt;
+    font-size: 12pt;
     padding-right: 20px;
 }
 
@@ -145,7 +145,7 @@ textarea {
     display: flex;
     align-items: flex-start;
     gap: 6px; 
-    line-height: 1.4; 
+    line-height: 1.2; 
 }
 
 .checkbox-group label input[type="checkbox"] {
@@ -155,8 +155,8 @@ textarea {
 .rating-levels {
     width: 250px;
     text-align: center;
-    color: #e61e25;
-    font-size: 13pt;
+    color: #1c1e85;
+    font-size: 12pt;
 }
 
 .rating-section {
@@ -180,7 +180,7 @@ textarea {
 .rating-criteria {
     flex: 1;
     padding-right: 15px;
-    font-size: 13pt;
+    font-size: 12pt;
     line-height: 1.4;
 }
 
