@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Đánh Giá Học Viên - MindX</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/coding.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/common-buttons.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7/download.min.js"></script>
+    <script src="js/pdfManager.js" defer></script>
+    <script src="js/preview.js" defer></script>
+</head>
+<body>
+    <!-- Course Selection Buttons -->
+    <div class="course-selection">
+        <button class="course-btn active">Robotics</button>
+        <a href="coding.html"><button class="course-btn">Coding</button></a>
+    </div>
+
+    <!-- Robotics K12 Form -->
+    <div class="container" id="roboticsK12Form">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="GearGen Logo">
+            </div>
+            <div class="title">
+                <h1>PHIẾU CHIA SẺ TRẢI NGHIỆM <br> ROBOTICS</h1>
+            </div>
+        </div>
+        <div class="section">
+            <h2>A. THÔNG TIN HỌC VIÊN</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="hoTen">Tên học viên:</label>
+                    <input type="text" id="hoTen" name="hoTen">
+                </div>
+                <div class="form-group">
+                    <label for="tuoiLop">Lớp:</label>
+                    <input type="text" id="tuoiLop" name="tuoiLop">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="monTraiNghiem">Môn trải nghiệm:</label>
+                    <input type="text" id="monTraiNghiem" name="monTraiNghiem">
+                </div>
+                <div class="form-group">
+                    <label for="ngayTraiNghiem">Ngày trải nghiệm:</label>
+                    <input type="date" id="ngayTraiNghiem" name="ngayTraiNghiem">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="giaoVien">Giáo viên hướng dẫn:</label>
+                    <input type="text" id="giaoVien" name="giaoVien">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>B. VỀ KHẢ NĂNG HỌC TẬP</h2>            
+            <div class="rating-header">
+                <div class="rating-title">Khả năng ghi nhớ:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc lại một số thao tác, đang làm quen với thông tin mới</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Nhớ được phần lớn các thao tác, thực hiện theo hướng dẫn khá tốt</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Nhớ tốt các nội dung và áp dụng được khi làm sản phẩm</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Nhớ rất tốt, tự tin áp dụng và có thể tự nhắc lại</label>
+                </div>
+            </div>
+
+            <div class="rating-header">
+                <div class="rating-title">Khả năng thực hành sản phẩm:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Đang làm quen với thao tác, cần hướng dẫn thêm để hoàn thành sản phẩm</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Thực hiện đúng theo hướng dẫn, đôi khi cần hỗ trợ điều chỉnh các lỗi nhỏ</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Thực hiện tốt các bước, biết tự điều chỉnh khi gặp lỗi và hoàn thành sản phẩm</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Thực hiện rất thành thạo, chủ động tìm cách tối ưu để hoàn thiện sản phẩm tốt</label>
+                </div>
+            </div>
+            
+            <div class="rating-header">
+                <div class="rating-title">Khả năng lắp ráp và sáng tạo:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Đang làm quen dần, cần được hỗ trợ thêm để lắp ráp hoàn chỉnh</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Quan sát và lắp được theo bản hướng dẫn, đôi khi cần gợi ý ở các bước phức tạp</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Lắp ráp chính xác theo mẫu hướng dẫn, bắt đầu có những ý tưởng thay đổi nhỏ cho sản phẩm</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Lắp ráp thành thạo theo mẫu và chủ động sáng tạo thêm nhiều chi tiết độc đáo, mới lạ</label>
+                </div>
+            </div>
+           
+            <div class="rating-header">
+                <div class="rating-title">Khả năng sử dụng tiếng Anh:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Nhận biết được các từ và cụm từ thông dụng, cần hỗ trợ thêm khi đọc hiểu</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Có thể đọc hiểu các hướng dẫn cơ bản, giao tiếp được các ý đơn giản</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Đọc hiểu tốt các tài liệu/hướng dẫn, trao đổi thông tin khá tự tin</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Tự tin sử dụng tiếng Anh để tìm hiểu thông tin và giao tiếp</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>C. VỀ THÁI ĐỘ HỌC TẬP</h2>
+            <div class="rating-header">
+                <div class="rating-title">Mức độ tập trung:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc nhở để quay lại bài học, dễ bị phân tâm bởi xung quanh</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Khá tập trung khi làm việc, đôi lúc còn xao lãng nhưng tự điều chỉnh được</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Tập trung tốt vào nhiệm vụ, ít bị ảnh hưởng bởi môi trường bên ngoài</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Rất tập trung, luôn chú tâm cao độ vào bài học</label>
+                </div>
+            </div>
+
+            <div class="rating-header">
+                <div class="rating-title">Mức độ hợp tác:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc nhở để quay lại bài học, dễ bị phân tâm bởi xung quanh</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Lắng nghe và hoàn thành các nhiệm vụ được giáo viên yêu cầu</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Hợp tác tốt, sẵn sàng tiếp thu góp ý của giáo viên để điều chỉnh sản phẩm</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Luôn giữ thái độ tôn trọng, tích cực lắng nghe và thực hiện tốt sản phẩm</label>
+                </div>
+            </div>
+
+            <div class="rating-header">
+                <div class="rating-title">Mức độ chủ động:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Thường đợi giáo viên nhắc nhở mới bắt đầu làm, ngại đặt câu hỏi</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Tự giác thực hiện các nhiệm vụ được giao, sẽ hỏi khi gặp vướng mắc</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Tự giác bắt tay vào làm sản phẩm, chủ động hỏi giáo viên để làm rõ vấn đề</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Rất chủ động, tự tin đặt câu hỏi tìm tòi và tự bắt đầu làm sản phẩm mà không cần nhắc nhở</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>D. VỀ KỸ NĂNG MỀM</h2>
+            <div class="rating-header">
+                <div class="rating-title">Giao tiếp và trình bày:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Ngại chia sẻ, cần khuyến khích nhiều hơn để trình bày ý kiến của mình</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Có thể trình bày được ý kiến cá nhân, diễn đạt chưa quá rõ ràng</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Chủ động chia sẻ, trình bày ý kiến một cách rành mạch và dễ hiểu</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Trình bày rất tự tin, biết cách sắp xếp ý tưởng và thu hút người nghe</label>
+                </div>
+            </div>
+
+            <div class="rating-header">
+                <div class="rating-title">Giải quyết vấn đề:</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="knowledge" value="1" required> Thường lúng túng khi gặp lỗi, cần giáo viên hướng dẫn để tìm ra vấn đề</label>
+                    <label><input type="checkbox" name="knowledge" value="2"> Nhận ra được vấn đề, có thử tự điều chỉnh nhưng vẫn cần thêm gợi ý</label>
+                    <label><input type="checkbox" name="knowledge" value="3"> Chủ động xem lại các bước, kiên nhẫn thử nhiều cách để tự điều chỉnh lỗi</label>
+                    <label><input type="checkbox" name="knowledge" value="4"> Tự tin phân tích vấn đề, chủ động tìm nhiều giải pháp và chọn được cách hiệu quả nhất</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>E. CHIA SẺ CỦA GIÁO VIÊN</h2>
+            <div class="teacher-comment">
+                <h3>Nhận xét chung từ giáo viên</h3>
+                <textarea id="teacherComment" rows="5"></textarea>
+            </div>
+
+            <div class="teacher-comment">
+                <h3>Điểm nổi bật của học viên</h3>
+                <textarea id="teacherComment" rows="5"></textarea>
+            </div>
+
+            <div class="teacher-comment">
+                <h3>Đề xuất hướng phát triển cho bé</h3>
+                <textarea id="teacherComment" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="previewBtn">Xem trước</button>
+            <button id="exportPdfBtn">Xuất PDF</button>
+        </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Đang tạo PDF, vui lòng đợi...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>TRUNG TÂM CÔNG NGHỆ GEARGEN</p>
+    </footer>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="previewContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
