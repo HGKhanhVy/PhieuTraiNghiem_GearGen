@@ -259,4 +259,125 @@ document.addEventListener('DOMContentLoaded', function() {
         
         return false; // Không có năng lực nào được đánh giá
     }
+
+    // --- 1. Cấu hình Ngân hàng nhận xét ---
+    const commentBank = {
+        ability1: { // Ghi nhớ
+            label: "khả năng ghi nhớ",
+            high: "Con ghi nhớ bài rất tốt và tự tin áp dụng kiến thức.",
+            low: "Con cần ôn tập thêm để ghi nhớ các thao tác cốt lõi."
+        },
+        ability2: { // Thực hành
+            label: "kỹ năng thực hành",
+            high: "Thao tác thực hành của con thành thạo, hoàn thiện sản phẩm tốt.",
+            low: "Kỹ năng thực hành còn lúng túng, cần luyện tập thêm nhiều hơn."
+        },
+        ability3: { // Sáng tạo
+            label: "tư duy sáng tạo",
+            high: "Con có tư duy sáng tạo tốt, thường xuyên đưa ra ý tưởng mới.",
+            low: "Con nên mạnh dạn hơn trong việc đưa ra các ý tưởng của riêng mình."
+        },
+        ability4: { // Tiếng Anh
+            label: "vốn Tiếng Anh",
+            high: "Con sử dụng Tiếng Anh tự tin để tìm hiểu và giao tiếp.",
+            low: "Vốn từ vựng Tiếng Anh cần được trau dồi thêm."
+        },
+        ability5: { // Tập trung
+            label: "sự tập trung",
+            high: "Con duy trì sự tập trung cao độ trong suốt buổi học.",
+            low: "Con còn dễ bị phân tâm, cần rèn luyện thêm sự tập trung."
+        },
+        ability6: { // Hợp tác
+            label: "tinh thần hợp tác",
+            high: "Con hợp tác rất tốt với giáo viên và các bạn.",
+            low: "Con cần lắng nghe và hợp tác chặt chẽ hơn trong giờ học."
+        },
+        ability7: { // Chủ động
+            label: "tính chủ động",
+            high: "Con rất chủ động tìm tòi và hoàn thành nhiệm vụ.",
+            low: "Con cần chủ động hơn, đừng ngại đặt câu hỏi khi gặp khó khăn."
+        },
+        ability8: { // Giao tiếp
+            label: "kỹ năng trình bày",
+            high: "Con trình bày ý tưởng mạch lạc, tự tin và thu hút.",
+            low: "Con cần luyện tập thêm để diễn đạt ý tưởng rõ ràng hơn."
+        },
+        ability9: { // Giải quyết vấn đề
+            label: "kỹ năng giải quyết vấn đề",
+            high: "Con phân tích lỗi sai rất tốt và tự tìm ra giải pháp tối ưu.",
+            low: "Khi gặp lỗi, con cần bình tĩnh hơn để tìm nguyên nhân và cách sửa."
+        }
+    };
+
+    // --- 2. Logic xử lý Checkbox (Chỉ chọn 1 & Tự động điền) ---
+    function setupRadioButtonListeners() {
+        // Lấy tất cả checkbox trong các nhóm ability
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][name^="ability"]');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // A. Logic "Chỉ chọn 1" (Giả lập Radio)
+                if (this.checked) {
+                    const groupName = this.name;
+                    // Tìm các checkbox khác cùng nhóm
+                    const otherCheckboxes = document.querySelectorAll(`input[name="${groupName}"]`);
+                    otherCheckboxes.forEach(other => {
+                        if (other !== this) {
+                            other.checked = false; // Bỏ chọn các ô còn lại
+                        }
+                    });
+                }
+
+                // B. Gọi các hàm tính toán sau khi chọn
+                generateAutoComments();
+            });
+        });
+
+        // Lắng nghe sự kiện đổi tên để cập nhật nhận xét chung
+        const nameInput = document.getElementById('hoTen');
+        if(nameInput) {
+            nameInput.addEventListener('input', generateAutoComments);
+        }
+    }
+
+    // --- 3. Hàm tạo nội dung nhận xét (Giữ nguyên logic) ---
+    function generateAutoComments() {
+        const abilityGroups = ['ability1', 'ability2', 'ability3', 'ability4', 'ability5', 'ability6', 'ability7', 'ability8', 'ability9'];
+        
+        let highlightSentences = [];
+        let devSentences = [];
+
+        abilityGroups.forEach(group => {
+            // Lưu ý: querySelector vẫn hoạt động tốt với checkbox
+            const checked = document.querySelector(`input[name="${group}"]:checked`);
+            if (checked) {
+                const score = parseInt(checked.value);
+                const criteria = commentBank[group];
+                if (score >= 3) highlightSentences.push(criteria.high);
+                else devSentences.push(criteria.low);
+            }
+        });
+
+        // Điền vào Textarea
+        const txtHighlight = document.getElementById('commentHighlight');
+        if (txtHighlight) txtHighlight.value = highlightSentences.join(" ");
+
+        const txtDev = document.getElementById('commentDev');
+        if (txtDev) txtDev.value = devSentences.join(" ");
+
+        // Nhận xét chung
+        const txtGeneral = document.getElementById('commentGeneral');
+        if (txtGeneral) {
+            const name = document.getElementById('hoTen').value || "Học viên";
+            let summary = "";
+            if (highlightSentences.length > 0 || devSentences.length > 0) {
+                 if (highlightSentences.length >= devSentences.length) {
+                    summary = `${name} có buổi trải nghiệm rất tích cực. Con thể hiện thế mạnh rõ rệt ở ${highlightSentences.length} tiêu chí. Nhìn chung, con tiếp thu bài nhanh và có thái độ học tập tốt.`;
+                } else {
+                    summary = `${name} đã hoàn thành buổi trải nghiệm. Con cần nỗ lực hơn ở một số kỹ năng để theo kịp tiến độ lớp học tốt hơn trong tương lai.`;
+                }
+            }
+            txtGeneral.value = summary;
+        }
+    }
 }); 
