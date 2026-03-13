@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Phiếu Chia Sẻ Trải Nghiệm - Robotics">
     <title>Phiếu Chia Sẻ Trải Nghiệm - Robotics</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/coding.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/common-buttons.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/coding.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/common-buttons.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7/download.min.js"></script>
     <script src="./js/pdfManager.js" defer></script>
     <script src="./js/preview.js" defer></script>
-    <script src="./coding.js" defer></script>
+    <script src="./js/coding.js" defer></script>
 </head>
 <body>
     <!-- Course Selection Buttons -->
     <div class="course-selection">
         <button class="course-btn active">Robotics</button>
-        <a href="coding.html"><button class="course-btn">Coding</button></a>
+        <a href="./coding.html"><button class="course-btn">Coding</button></a>
     </div>
 
     <!-- Robotics K12 Form -->
     <div class="container" id="roboticsK12Form">
         <div class="header">
             <div class="logo">
-                <img src="logo.png" alt="GearGen Logo">
+                <img src="./img/logo.png" alt="GearGen Logo">
             </div>
             <div class="title">
                 <h1>PHIẾU CHIA SẺ TRẢI NGHIỆM <br> ROBOTICS</h1>
@@ -159,22 +159,22 @@
             <h2>E. CHIA SẺ CỦA GIÁO VIÊN</h2>
             <div class="teacher-comment">
                 <h3>Nhận xét chung từ giáo viên</h3>
-                <textarea id="teacherComment" rows="5"></textarea>
+                <textarea id="commentGeneral" rows="5"></textarea>
             </div>
 
             <div class="teacher-comment">
                 <h3>Điểm nổi bật của học viên</h3>
-                <textarea id="teacherComment" rows="5"></textarea>
+                <textarea id="commentHighlight" rows="5"></textarea>
             </div>
 
             <div class="teacher-comment">
                 <h3>Đề xuất hướng phát triển cho bé</h3>
-                <textarea id="teacherComment" rows="5"></textarea>
+                <textarea id="commentDev" rows="5"></textarea>
             </div>
         </div>
 
         <div class="actions">
-            <button id="previewBtn">Xem trước</button>
+            <!-- <button id="previewBtn">Xem trước</button> -->
             <button id="exportPdfBtn">Xuất PDF</button>
         </div>
     </div>
@@ -200,6 +200,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/coding.js"></script>
 </body>
 </html>
