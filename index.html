@@ -15,8 +15,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://unpkg.com/downloadjs@1.4.7/download.min.js"></script>
-    <script src="js/pdfManager.js" defer></script>
-    <script src="js/preview.js" defer></script>
+    <script src="./js/pdfManager.js" defer></script>
+    <script src="./js/preview.js" defer></script>
+    <script src="./coding.js" defer></script>
 </head>
 <body>
     <!-- Course Selection Buttons -->
@@ -68,42 +69,42 @@
         <div class="section">
             <h2>B. VỀ KHẢ NĂNG HỌC TẬP</h2>            
             <div class="rating-header">
-                <div class="rating-title">Khả năng ghi nhớ:</div>
+                <div class="rating-title">Khả năng ghi nhớ</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc lại một số thao tác, đang làm quen với thông tin mới</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Nhớ được phần lớn các thao tác, thực hiện theo hướng dẫn khá tốt</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Nhớ tốt các nội dung và áp dụng được khi làm sản phẩm</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Nhớ rất tốt, tự tin áp dụng và có thể tự nhắc lại</label>
+                    <label><input type="checkbox" name="ability1" value="1" required> Học sinh gặp khó khăn trong việc ghi nhớ, thường cần được nhắc lại nhiều lần</label>
+                    <label><input type="checkbox" name="ability1" value="2"> Nhớ được phần lớn các thao tác, thực hiện theo hướng dẫn khá tốt</label>
+                    <label><input type="checkbox" name="ability1" value="3"> Nhớ tốt các nội dung và áp dụng được khi làm sản phẩm</label>
+                    <label><input type="checkbox" name="ability1" value="4"> Học sinh có khả năng ghi nhớ tốt, kể cả các chi tiết nhỏ trong nội dung đã học.</label>
                 </div>
             </div>
 
             <div class="rating-header">
-                <div class="rating-title">Khả năng thực hành sản phẩm:</div>
+                <div class="rating-title">Khả năng thực hành sản phẩm</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Đang làm quen với thao tác, cần hướng dẫn thêm để hoàn thành sản phẩm</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Thực hiện đúng theo hướng dẫn, đôi khi cần hỗ trợ điều chỉnh các lỗi nhỏ</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Thực hiện tốt các bước, biết tự điều chỉnh khi gặp lỗi và hoàn thành sản phẩm</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Thực hiện rất thành thạo, chủ động tìm cách tối ưu để hoàn thiện sản phẩm tốt</label>
+                    <label><input type="checkbox" name="ability2" value="1" required> Đang làm quen với thao tác, cần hướng dẫn thêm để hoàn thành sản phẩm</label>
+                    <label><input type="checkbox" name="ability2" value="2"> Thực hiện đúng theo hướng dẫn, đôi khi cần hỗ trợ điều chỉnh các lỗi nhỏ</label>
+                    <label><input type="checkbox" name="ability2" value="3"> Thực hiện tốt các bước, biết tự điều chỉnh khi gặp lỗi và hoàn thành sản phẩm</label>
+                    <label><input type="checkbox" name="ability2" value="4"> Thực hiện rất thành thạo, chủ động tìm cách tối ưu để hoàn thiện sản phẩm tốt</label>
                 </div>
             </div>
             
             <div class="rating-header">
-                <div class="rating-title">Khả năng lắp ráp và sáng tạo:</div>
+                <div class="rating-title">Khả năng sáng tạo</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Đang làm quen dần, cần được hỗ trợ thêm để lắp ráp hoàn chỉnh</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Quan sát và lắp được theo bản hướng dẫn, đôi khi cần gợi ý ở các bước phức tạp</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Lắp ráp chính xác theo mẫu hướng dẫn, bắt đầu có những ý tưởng thay đổi nhỏ cho sản phẩm</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Lắp ráp thành thạo theo mẫu và chủ động sáng tạo thêm nhiều chi tiết độc đáo, mới lạ</label>
+                    <label><input type="checkbox" name="ability3" value="1" required> Học sinh chưa thể hiện mong muốn sáng tạo, chủ yếu làm theo sản phẩm mẫu</label>
+                    <label><input type="checkbox" name="ability3" value="2"> Học sinh có mong muốn điều chỉnh mô hình theo hướng khác với sản phẩm mẫu</label>
+                    <label><input type="checkbox" name="ability3" value="3"> Học sinh có cải tiến mô hình và điều chỉnh chức năng khác sản phẩm mẫu</label>
+                    <label><input type="checkbox" name="ability3" value="4"> Học sinh xây dựng mô hình với nhiều thay đổi rõ rệt so với sản phẩm mẫu, thể hiện được ý tưởng riêng và dấu ấn cá nhân</label>
                 </div>
             </div>
            
             <div class="rating-header">
-                <div class="rating-title">Khả năng sử dụng tiếng Anh:</div>
+                <div class="rating-title">Khả năng sử dụng tiếng Anh</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Nhận biết được các từ và cụm từ thông dụng, cần hỗ trợ thêm khi đọc hiểu</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Có thể đọc hiểu các hướng dẫn cơ bản, giao tiếp được các ý đơn giản</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Đọc hiểu tốt các tài liệu/hướng dẫn, trao đổi thông tin khá tự tin</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Tự tin sử dụng tiếng Anh để tìm hiểu thông tin và giao tiếp</label>
+                    <label><input type="checkbox" name="ability4" value="1" required> Ghi nhớ và nhận biết được một số thẻ lệnh cơ bản</label>
+                    <label><input type="checkbox" name="ability4" value="2"> Ghi nhớ từ vựng và có thể sử dụng tiếng Anh để đặt tên cho đối tượng, biến, tài nguyên.</label>
+                    <label><input type="checkbox" name="ability4" value="3"> Có thể tự tìm kiếm hình ảnh, tài nguyên học tập bằng từ khóa tiếng Anh.</label>
+                    <label><input type="checkbox" name="ability4" value="4"> Tự tin sử dụng tiếng Anh trong quá trình học.</label>
                 </div>
             </div>
         </div>
@@ -111,32 +112,22 @@
         <div class="section">
             <h2>C. VỀ THÁI ĐỘ HỌC TẬP</h2>
             <div class="rating-header">
-                <div class="rating-title">Mức độ tập trung:</div>
+                <div class="rating-title">Mức độ tập trung</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc nhở để quay lại bài học, dễ bị phân tâm bởi xung quanh</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Khá tập trung khi làm việc, đôi lúc còn xao lãng nhưng tự điều chỉnh được</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Tập trung tốt vào nhiệm vụ, ít bị ảnh hưởng bởi môi trường bên ngoài</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Rất tập trung, luôn chú tâm cao độ vào bài học</label>
+                    <label><input type="checkbox" name="ability5" value="1" required> Cần nhắc nhở để quay lại bài học, dễ bị phân tâm bởi môi trường xung quanh</label>
+                    <label><input type="checkbox" name="ability5" value="2"> Có sự chú ý trong quá trình học, nhưng đôi lúc còn mất tập trung</label>
+                    <label><input type="checkbox" name="ability5" value="3"> Có sự tập trung trong quá trình học, không đợi giáo viên nhắc nhở</label>
+                    <label><input type="checkbox" name="ability5" value="4"> Chủ động tập trung và luôn chú tâm vào bài học</label>
                 </div>
             </div>
 
             <div class="rating-header">
-                <div class="rating-title">Mức độ hợp tác:</div>
+                <div class="rating-title">Mức độ hợp tác</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Cần nhắc nhở để quay lại bài học, dễ bị phân tâm bởi xung quanh</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Lắng nghe và hoàn thành các nhiệm vụ được giáo viên yêu cầu</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Hợp tác tốt, sẵn sàng tiếp thu góp ý của giáo viên để điều chỉnh sản phẩm</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Luôn giữ thái độ tôn trọng, tích cực lắng nghe và thực hiện tốt sản phẩm</label>
-                </div>
-            </div>
-
-            <div class="rating-header">
-                <div class="rating-title">Mức độ chủ động:</div>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Thường đợi giáo viên nhắc nhở mới bắt đầu làm, ngại đặt câu hỏi</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Tự giác thực hiện các nhiệm vụ được giao, sẽ hỏi khi gặp vướng mắc</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Tự giác bắt tay vào làm sản phẩm, chủ động hỏi giáo viên để làm rõ vấn đề</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Rất chủ động, tự tin đặt câu hỏi tìm tòi và tự bắt đầu làm sản phẩm mà không cần nhắc nhở</label>
+                    <label><input type="checkbox" name="ability6" value="1" required> Có lắng nghe nhưng mức độ phản hồi còn rất hạn chế</label>
+                    <label><input type="checkbox" name="ability6" value="2"> Có lắng nghe nhưng chưa chủ động phản hồi</label>
+                    <label><input type="checkbox" name="ability6" value="3"> Hợp tác tốt, có chủ động trao đổi và phản hồi với giáo viên</label>
+                    <label><input type="checkbox" name="ability6" value="4"> Tích cực lắng nghe và chủ động phối hợp trong quá trình học tập</label>
                 </div>
             </div>
         </div>
@@ -144,22 +135,22 @@
         <div class="section">
             <h2>D. VỀ KỸ NĂNG MỀM</h2>
             <div class="rating-header">
-                <div class="rating-title">Giao tiếp và trình bày:</div>
+                <div class="rating-title">Giao tiếp và Trình bày</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Ngại chia sẻ, cần khuyến khích nhiều hơn để trình bày ý kiến của mình</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Có thể trình bày được ý kiến cá nhân, diễn đạt chưa quá rõ ràng</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Chủ động chia sẻ, trình bày ý kiến một cách rành mạch và dễ hiểu</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Trình bày rất tự tin, biết cách sắp xếp ý tưởng và thu hút người nghe</label>
+                    <label><input type="checkbox" name="ability8" value="1" required> Học sinh còn rụt rè, ít phản hồi trong quá trình trao đổi</label>
+                    <label><input type="checkbox" name="ability8" value="2"> Học sinh có phản hồi khi được hỏi, nhưng chưa chủ động chia sẻ ý kiến cá nhân</label>
+                    <label><input type="checkbox" name="ability8" value="3"> Học sinh trình bày được ý kiến cá nhân, nhưng chưa quá rõ ràng</label>
+                    <label><input type="checkbox" name="ability8" value="4"> Học sinh trình bày được ý tưởng và giải đáp được các thắc mắc về sản phẩm</label>
                 </div>
             </div>
 
             <div class="rating-header">
-                <div class="rating-title">Giải quyết vấn đề:</div>
+                <div class="rating-title">Phân tích và Giải quyết vấn đề</div>
                 <div class="checkbox-group">
-                    <label><input type="checkbox" name="knowledge" value="1" required> Thường lúng túng khi gặp lỗi, cần giáo viên hướng dẫn để tìm ra vấn đề</label>
-                    <label><input type="checkbox" name="knowledge" value="2"> Nhận ra được vấn đề, có thử tự điều chỉnh nhưng vẫn cần thêm gợi ý</label>
-                    <label><input type="checkbox" name="knowledge" value="3"> Chủ động xem lại các bước, kiên nhẫn thử nhiều cách để tự điều chỉnh lỗi</label>
-                    <label><input type="checkbox" name="knowledge" value="4"> Tự tin phân tích vấn đề, chủ động tìm nhiều giải pháp và chọn được cách hiệu quả nhất</label>
+                    <label><input type="checkbox" name="ability9" value="1" required> Cần sự hỗ trợ của giáo viên trong việc tìm hiểu sản phẩm</label>
+                    <label><input type="checkbox" name="ability9" value="2"> Nhận ra được vấn đề, nhưng cần giáo viên định hướng giải pháp phù hợp</label>
+                    <label><input type="checkbox" name="ability9" value="3"> Có khả năng phân tích và đưa giải pháp nhưng chưa tối ưu</label>
+                    <label><input type="checkbox" name="ability9" value="4"> Biết phân tích vấn đề, chủ động đề xuất nhiều giải pháp</label>
                 </div>
             </div>
         </div>
